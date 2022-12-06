@@ -1,6 +1,9 @@
 package ru.myitschool.lab22toast
 
+import android.content.res.Configuration
+import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        if (resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) return
         showMessage(getString(R.string.ndestroy))
     }
 
